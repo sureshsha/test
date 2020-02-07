@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -14,15 +15,17 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
-import { MyBlogComponent } from '../app/myBlog/myBlog.component';
-import { AboutComponent } from '../app/About/about.component';
+import { MyBlogComponent } from './myBlog/myBlog.component';
+import { AboutComponent } from './About/about.component';
+import { BlogViewComponent } from './blog-view/blog-view.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        routing
+        routing,
+        FormsModule
     ],
     declarations: [
         AppComponent,
@@ -31,7 +34,8 @@ import { AboutComponent } from '../app/About/about.component';
         LoginComponent,
         RegisterComponent,
         MyBlogComponent,
-        AboutComponent
+        AboutComponent,
+        BlogViewComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
