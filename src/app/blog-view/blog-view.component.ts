@@ -4,9 +4,7 @@ import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-blog-view',
-  templateUrl: './blog-view.component.html',
-  providers: [ BlogService ]
-
+  templateUrl: './blog-view.component.html'
 })
 export class BlogViewComponent implements OnInit {
   public currentBlog;
@@ -15,8 +13,11 @@ export class BlogViewComponent implements OnInit {
               private blogData: BlogService) { }
 
   ngOnInit() {
-    let myBlogId = this.router.snapshot.paramMap.get('blogId');
+    let myBlogId = this.router.snapshot.paramMap.get('id');
     console.log(myBlogId);
-    this.currentBlog = this.blogData.getSingleInformation(myBlogId);
+    this.blogData.getSingleInformation(myBlogId).subscribe(data => {
+       this.currentBlog =  data;
+       console.log(this.currentBlog);
+    });
   }
 }

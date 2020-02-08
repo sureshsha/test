@@ -18,7 +18,7 @@ export class MyBlogComponent implements OnInit, OnDestroy {
     blogCategory: string;
     possibleCategories = ["comedy", "Drama", "Action", "Technology"]
     postedData;
-
+    blogData;
     constructor(
         private authenticationService: AuthenticationService,
         private userService: UserService,
@@ -26,10 +26,17 @@ export class MyBlogComponent implements OnInit, OnDestroy {
     ) {
         this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
             this.currentUser = user;
+            console.log(this.currentUser.username);
         });
     }
 
     ngOnInit() {
+        this.postBlogData.getAllBlogs().subscribe(
+            data => {
+                this.blogData = data;
+                console.log(this.blogData.length);
+            }
+        );
         this.loadAllUsers();
     }
 

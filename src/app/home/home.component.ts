@@ -10,6 +10,7 @@ import { BlogService } from '../services/blog.service';
 export class HomeComponent implements OnInit {
 
   allBlogs = [''];
+  total;
 
   constructor(private blogData: BlogService) { }
 
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
    this.blogData.getAllBlogs().subscribe(
      data => {
       this.allBlogs = data;
+      this.total = this.allBlogs.length;
      },
      error => {
        console.log('Some is went wrong');

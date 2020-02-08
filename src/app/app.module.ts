@@ -19,6 +19,11 @@ import { MyBlogComponent } from './myBlog/myBlog.component';
 import { AboutComponent } from './About/about.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 
+
+
+import { CarouselComponent } from './home/carousel/carousel.component';
+
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -26,6 +31,7 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
         HttpClientModule,
         routing,
         FormsModule
+
     ],
     declarations: [
         AppComponent,
@@ -35,7 +41,8 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
         RegisterComponent,
         MyBlogComponent,
         AboutComponent,
-        BlogViewComponent
+        BlogViewComponent,
+        CarouselComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

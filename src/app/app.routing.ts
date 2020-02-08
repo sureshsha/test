@@ -14,7 +14,8 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'myBlog', component: MyBlogComponent, canActivate: [AuthGuard] },
     { path: 'about', component: AboutComponent },
-    { path: 'blog/:id', component: BlogViewComponent },
+    // { path: 'blog/:id', component: BlogViewComponent },
+    { path: 'allBlogs/:id', component: BlogViewComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
