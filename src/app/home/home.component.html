@@ -2,6 +2,7 @@
 <p style="text-align: center;">Welcome to the Blog Website where you will find everything you need to know about blogging. It doesn’t matter if you’re an experienced blogger or a total beginner, we cover topics of all levels. This blog also includes extensive sections about WordPress</p>
 <app-carousel></app-carousel>
 <br><br>
+<app-recent-blogs></app-recent-blogs>
 
 <div class="row" style="text-align:center" *ngIf="allBlogs">
   <div *ngFor="let blog of allBlogs" class="col-md-4" style="padding-bottom: 20px;">
@@ -9,8 +10,8 @@
     <div class="card h-100">
       <div class="card-header">{{blog.category | uppercase}}</div>
       <div class="card-body">
-        <img src="http://localhost:3000/images/chef.jpg" class="card-img-top" alt="...">
-        <h5 class="card-title">{{blog.title | uppercase}}</h5>
+        <img [src]="blog.imagePath" class="card-img-top" alt="...">
+        <h5 style="padding-top: 10px" class="card-title">{{blog.title | uppercase}}</h5>
         <p class="card-text">{{blog.description}}</p>
       </div>
       <div class="card-text text-muted">Posted on {{blog.created | date}}<br /> by {{blog.author}}
@@ -21,4 +22,4 @@
     </div>
   </div>
 </div>
-<marquee behavior="scroll" direction="right" style="color:red" scrollamount="12">**Total no.of blogs: {{total}}</marquee>
+<app-counter></app-counter>

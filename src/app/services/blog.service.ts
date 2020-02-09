@@ -19,12 +19,13 @@ export class BlogService {
 
   constructor(private http: HttpClient,
               private httpError: HttpErrorService) { }
+
+
 // Method to get all blogs data
   public getAllBlogs(): Observable<any> {
     return this.http.get('http://localhost:3000/allBlogs')
     .pipe(catchError(this.httpError.handleError));
   }
-
 
 
   // Method to get only particular data
@@ -35,6 +36,19 @@ export class BlogService {
   }
 
   public postBlog(blogData: any): Observable<any> {
-    return this.http.post('http://localhost:3000/allBlogs/', blogData);
+    return this.http.post('http://localhost:3000/allBlogs/', blogData)
+    .pipe(catchError(this.httpError.handleError));
+  }
+
+
+  public updateBlog(id: string, blogData: any): Observable<any> {
+    return this.http.patch('http://localhost:3000/allBlogs/' + id , blogData)
+    .pipe(catchError(this.httpError.handleError));
+
+  }
+
+  public deleteBlog(id: string): Observable<any> {
+    return this.http.delete('http://localhost:3000/allBlogs/' + id)
+    .pipe(catchError(this.httpError.handleError));
   }
 }

@@ -22,7 +22,7 @@
     <div>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-item nav-link" *ngIf="currentUser" routerLinkActive="active"(click)="logout()">Logout</a>
+                <a class="nav-item nav-link" *ngIf="currentUser" routerLinkActive="active"(click)="logout()"><span><img src= "../assets/images/suresh.jpg" width="30" height="30"></span> Logout</a>
                 <a class="nav-item nav-link" *ngIf="!currentUser" routerLinkActive="active"(click)="logout()">Login</a>
             </li>
         </ul>

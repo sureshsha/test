@@ -1,28 +1,25 @@
 <div class="container">
     <div class="row" *ngIf="currentBlog">
         <div class="col-md-12">
-            <h2>{{currentBlog.title}}</h2>
-            <p *ngIf="currentBlog.tags.length!=undefined && currentBlog.tags.length>0">tags: <span *ngFor="let tag of currentBlog.tags; let first=first; let last= last" >{{tag}}{{last ? '' : ', '}}</span></p>
-            <hr>
-            <div>{{currentBlog.description}}</div>
-            <div>{{currentBlog.body}}</div>
+            <h2 style="text-align: center;">{{currentBlog.title | uppercase}}</h2>
+            
+            <!--p *ngIf="currentBlog.tags.length!=undefined && currentBlog.tags.length>0">tags: <span *ngFor="let tag of currentBlog.tags; let first=first; let last= last" >{{tag}}{{last ? '' : ', '}}</span></p-->
             <hr>
             <h5>
-               category - {{currentBlog.category}} 
-            </h5>
+                category - {{currentBlog.category | uppercase}} 
+             </h5>
+            <img [src]="currentBlog.imagePath" style="width: 1028px; height: 579px;">
+            <br>
+            <div style="padding-top:15px">{{currentBlog.description}}</div>
+            <div>{{currentBlog.body}}</div>
+            <hr>
             <p>posted by {{currentBlog.author}} on {{currentBlog.created | date}}</p>
         </div>
     </div>
     <hr>
     <div class="row" *ngIf="currentBlog">
-        <div class="col-md-4">
-            <a class="btn btn-primary" [routerLink]="['/edit',currentBlog.blogId]">Edit</a>
-        </div>
-        <div class="col-md-4">
-            <a class="btn btn-danger" [routerLink]="['/delete',currentBlog.blogId]">Delete</a>
-        </div>
-        <div class="col-md-4">
-            <a class="btn btn-warning" [routerLink]="['/edit',currentBlog.blogId]">Go back</a>
+        <div class="col-md-12">
+            <a  class="btn btn-warning float-right" (click)="goBack()">Go back</a>
         </div>
     </div>
 </div>

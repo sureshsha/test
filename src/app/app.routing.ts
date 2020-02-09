@@ -7,6 +7,7 @@ import { AuthGuard } from './_guards';
 import { MyBlogComponent } from './myBlog/myBlog.component';
 import { AboutComponent } from './About/about.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'about', component: AboutComponent },
     // { path: 'blog/:id', component: BlogViewComponent },
     { path: 'allBlogs/:id', component: BlogViewComponent},
+    { path: 'edit/:id', component: BlogEditComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

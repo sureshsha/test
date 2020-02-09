@@ -21,9 +21,12 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
 
 
 
-import { CarouselComponent } from './home/carousel/carousel.component';
-
-
+import { CarouselComponent } from './home/carousel/carousel.component';;
+import { CounterComponent } from './home/counter/counter.component'
+;
+import { RecentBlogsComponent } from './home/recent-blogs/recent-blogs.component'
+;
+import { BlogEditComponent } from './blog-edit/blog-edit.component'
 @NgModule({
     imports: [
         BrowserModule,
@@ -43,7 +46,10 @@ import { CarouselComponent } from './home/carousel/carousel.component';
         AboutComponent,
         BlogViewComponent,
         CarouselComponent
-    ],
+,
+        CounterComponent ,
+        RecentBlogsComponent ,
+        BlogEditComponent  ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
