@@ -8,31 +8,32 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-item nav-link"  routerLink="/"><i class="fa fa-home fa-lg"></i>Home<span
+                <a class="nav-item nav-link" routerLinkActive="active"  routerLink="/">Home<span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link " routerLinkActive="active" routerLink="/myBlog"><i class="fa fa-user-o"></i>My Blog</a>
+                <a class="nav-item nav-link " routerLinkActive="active" routerLink="/myBlog">My Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link" routerLinkActive="active" routerLink="/about"><i class="fa fa-info fa-lg"></i>About</a>
+                <a class="nav-item nav-link" routerLinkActive="active" routerLink="/about">About</a>
             </li>
         </ul>
-        <div>
-            <ul class="navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-item nav-link" *ngIf="currentUser" routerLinkActive="active"(click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
-                </li>
-            </ul>
-        </div>    
     </div>
+    <div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-item nav-link" *ngIf="currentUser" routerLinkActive="active"(click)="logout()">Logout</a>
+                <a class="nav-item nav-link" *ngIf="!currentUser" routerLinkActive="active"(click)="logout()">Login</a>
+            </li>
+        </ul>
+    </div>    
 </nav>
 
 <!-- main app container -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 offset-sm-1">
+            <div class="col-md-12 offset-sm-0">
                 <alert></alert>
                 <router-outlet></router-outlet>
             </div>
@@ -42,12 +43,12 @@
 
 
 <!-- credits -->
-<div class="text-center">
+<div class="text-center bg-dark" style="color:whitesmoke; height:100px;padding-top: 20px;">
     <p>
-        <a href="http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial"
-            target="_top">Angular 7 - User Registration and Login Example & Tutorial</a>
+        <a href="https://sureshportfolio.herokuapp.com/"
+            target="_blank">To Know more about me vist my portfolio</a>
     </p>
     <p>
-        <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+        &copy;Copyright 2020 Suresh
     </p>
 </div>

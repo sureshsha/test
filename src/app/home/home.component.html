@@ -1,5 +1,7 @@
-﻿<app-carousel></app-carousel>
-<br><br><br>
+﻿<h2 style="text-align: center;">The Blog Website</h2>
+<p style="text-align: center;">Welcome to the Blog Website where you will find everything you need to know about blogging. It doesn’t matter if you’re an experienced blogger or a total beginner, we cover topics of all levels. This blog also includes extensive sections about WordPress</p>
+<app-carousel></app-carousel>
+<br><br>
 
 <div class="row" style="text-align:center" *ngIf="allBlogs">
   <div *ngFor="let blog of allBlogs" class="col-md-4" style="padding-bottom: 20px;">
@@ -19,6 +21,4 @@
     </div>
   </div>
 </div>
-
-
-<p>Total no.of blogs: {{total}}</p>
+<marquee behavior="scroll" direction="right" style="color:red" scrollamount="12">**Total no.of blogs: {{total}}</marquee>
