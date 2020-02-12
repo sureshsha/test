@@ -33,24 +33,25 @@ export class BlogEditComponent implements OnInit {
     });
   }
 
-  public updateBlog(): any {
-    let blogData = {
+  public updateBlogData(): any {
+    /* let blogData = {
       title: this.blogTitle,
       description: this.blogDescription,
       body: this.blogBodyHtml,
-      category: this.blogCategory,
-      created: new Date().toISOString(),
-      imagePath: this.baseUrl + this.blogCategory + '.jpg',
-    };
-    console.log(blogData);
-    this.blogData.updateBlog(this.currentBlog.id, blogData).subscribe(data => {
+      category: this.blogCategory,*/
+      this.currentBlog.imagePath = this.baseUrl + this.currentBlog.category + '.jpg';
+    
+    console.log(this.currentBlog);
+    this.blogData.updateBlog(this.currentBlog.id, this.currentBlog).subscribe(data => {
       this.postedData = data;
       console.log(this.postedData);
       this.formValues.resetForm();
       this.hidden = false;
       setTimeout(() => {
           this.hidden = true;
-      }, 2000);
+          this.route.navigate(['/myBlog']);
+      }, 5000);
+      
     });
   }
 

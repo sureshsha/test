@@ -10,8 +10,9 @@ import { BlogService } from '../services/blog.service';
 })
 export class HomeComponent implements OnInit {
 
-  allBlogs = [''];
+  allBlogs;
   total;
+  error;
 
   constructor(private blogData: BlogService) { }
 
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
       console.log(this.allBlogs);
      },
      error => {
-       console.log('Some is went wrong');
+       this.error = "Unable to connect Server!! Try again later..";
+       console.log(error);
      }
    );
   }

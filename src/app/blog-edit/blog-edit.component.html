@@ -2,7 +2,9 @@
   <h3>Edit this blog</h3>
   <div class="row" style="text-align:left">
     <div class="col-md-12">
-      <form #createBlogForm="ngForm" (ngSubmit)="updateBlog()">
+
+      <h2 [hidden]="hidden">Your Blog has been Updated successfully!!</h2>
+      <form #createBlogForm="ngForm" (ngSubmit)="updateBlogData()" [hidden]="!hidden">
 
         <div class="form-group">
 
