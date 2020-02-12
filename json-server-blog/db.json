@@ -69,16 +69,6 @@
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "title": "What is Lorem Ipsum?",
       "id": "Y4UJGhV"
-    },
-    {
-      "title": "What is Lorem Ipsum?",
-      "description": "test",
-      "body": "test",
-      "category": "flowers",
-      "author": "test",
-      "created": "2020-02-12T21:09:08.733Z",
-      "imagePath": "http://localhost:3000/images/flowers.jpg",
-      "id": "aTBI_y6"
     }
   ]
 }

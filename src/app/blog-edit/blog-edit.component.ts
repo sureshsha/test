@@ -18,6 +18,7 @@ export class BlogEditComponent implements OnInit {
   baseUrl = 'http://localhost:3000/images/';
   postedData;
   blogDeleted;
+  visible = true;
   public currentBlog;
   constructor(private router: ActivatedRoute,
               private route: Router,
@@ -59,7 +60,11 @@ export class BlogEditComponent implements OnInit {
   deleteBlogs() {
     this.blogData.deleteBlog(this.currentBlog.id).subscribe(data => {
         this.blogDeleted = data;
-        this.route.navigate(['/myBlog']);
+        this.visible = false;
+        setTimeout(() => {
+          this.visible = false;
+          this.route.navigate(['/myBlog']);
+        }, 2000);
     });
 }
 

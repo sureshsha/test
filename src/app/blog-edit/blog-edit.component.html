@@ -4,7 +4,8 @@
     <div class="col-md-12">
 
       <h2 [hidden]="hidden">Your Blog has been Updated successfully!!</h2>
-      <form #createBlogForm="ngForm" (ngSubmit)="updateBlogData()" [hidden]="!hidden">
+      <h2 [hidden]="visible">Blog Deleted successfully!!</h2>
+      <form #createBlogForm="ngForm" (ngSubmit)="updateBlogData()" [hidden]="!hidden && !visible">
 
         <div class="form-group">
 
